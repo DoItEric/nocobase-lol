@@ -98,7 +98,7 @@ function useRecordBlocks() {
             }
             return false;
           },
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           hideSearch: true,
           componentType: `ReadPrettyFormItem`,
           createBlockSchema,
@@ -136,7 +136,7 @@ function useRecordBlocks() {
             }
             return false;
           },
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           hideSearch: true,
           hideOtherRecordsInPopup: true,
           componentType: `FormItem`,
@@ -163,7 +163,7 @@ function useRecordBlocks() {
             }
             return false;
           },
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           hideSearch: true,
           componentType: `FormItem`,
           createBlockSchema: ({ item, fromOthersInPopup }) => {
@@ -192,7 +192,7 @@ function useRecordBlocks() {
 
         return {
           hideSearch: true,
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           filterCollections({ associationField }) {
             if (associationField) {
               return ['hasMany', 'belongsToMany'].includes(associationField.type);
@@ -219,7 +219,7 @@ function useRecordBlocks() {
 
         return {
           hideSearch: true,
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           filterCollections({ associationField }) {
             if (associationField) {
               return ['hasMany', 'belongsToMany'].includes(associationField.type);
@@ -246,7 +246,7 @@ function useRecordBlocks() {
 
         return {
           hideSearch: true,
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           filterCollections({ associationField }) {
             if (associationField) {
               return ['hasMany', 'belongsToMany'].includes(associationField.type);

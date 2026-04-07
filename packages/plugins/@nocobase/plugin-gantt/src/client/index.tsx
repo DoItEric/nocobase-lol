@@ -57,7 +57,7 @@ export class PluginGanttClient extends Plugin {
         const { createGanttBlock } = useCreateGanttBlock();
 
         return {
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           filterCollections({ associationField }) {
             if (associationField) {
               return ['hasMany', 'belongsToMany'].includes(associationField.type);

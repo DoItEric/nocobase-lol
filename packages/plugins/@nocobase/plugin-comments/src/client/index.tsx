@@ -71,7 +71,7 @@ export class PluginCommentClient extends Plugin {
       useComponentProps() {
         const cm = useCollectionManager();
         return {
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           filterCollections({ associationField }) {
             if (associationField) {
               if (!['hasMany', 'belongsToMany'].includes(associationField.type)) {

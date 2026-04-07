@@ -103,7 +103,7 @@ class PluginKanbanClient extends Plugin {
         const { createKanbanBlock } = useCreateKanbanBlock();
 
         return {
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           filterCollections({ associationField }) {
             if (associationField) {
               return ['hasMany', 'belongsToMany'].includes(associationField.type);

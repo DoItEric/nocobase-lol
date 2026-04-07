@@ -43,7 +43,7 @@ const commonOptions = {
               filterCollections() {
                 return false;
               },
-              onlyCurrentDataSource: true,
+              onlyCurrentDataSource: false,
             },
             collectionName: name,
             dataSource,
@@ -56,7 +56,7 @@ const commonOptions = {
               filterCollections() {
                 return false;
               },
-              onlyCurrentDataSource: true,
+              onlyCurrentDataSource: false,
             },
             collectionName: name,
             dataSource,

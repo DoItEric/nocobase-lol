@@ -118,7 +118,7 @@ export class PluginCalendarClient extends Plugin {
         const { createCalendarBlock } = useCreateCalendarBlock();
 
         return {
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           filterCollections({ associationField }) {
             if (associationField) {
               return ['hasMany', 'belongsToMany'].includes(associationField.type);

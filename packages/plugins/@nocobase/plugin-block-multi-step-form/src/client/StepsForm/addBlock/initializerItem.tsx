@@ -1,3 +1,12 @@
+/**
+ * This file is part of the NocoBase (R) project.
+ * Copyright (c) 2020-2024 NocoBase Co., Ltd.
+ * Authors: NocoBase Team.
+ *
+ * This project is dual-licensed under AGPL-3.0 and NocoBase Commercial License.
+ * For more information, please refer to: https://www.nocobase.com/agreement.
+ */
+
 import { FormOutlined } from '@ant-design/icons';
 import {
   SchemaInitializerItemType,
@@ -44,7 +53,7 @@ export const stepsFormInitializerItemCreater: (
             }
             return false;
           },
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           hideSearch: true,
           hideOtherRecordsInPopup: true,
           // componentType: `FormItem`,
@@ -81,7 +90,7 @@ export const stepsFormInitializerItemCreater: (
             }
             return false;
           },
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           hideSearch: true,
           // componentType: `FormItem`,
           onCreateBlockSchema: ({ item, fromOthersInPopup }) => {
@@ -126,7 +135,7 @@ export const stepsFormInitializerItemCreater: (
         return {
           ...itemConfig,
           title: t('StepsForm'),
-          onlyCurrentDataSource: true,
+          onlyCurrentDataSource: false,
           hideSearch: true,
           collectionName: currentCollection.name,
           dataSource: currentCollection.dataSource,

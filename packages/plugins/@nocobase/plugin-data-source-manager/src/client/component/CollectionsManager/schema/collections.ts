@@ -171,6 +171,10 @@ export const collectionTableSchema: ISchema = {
           },
           'x-visible': '{{allowCollectionDeletion}}',
         },
+        syncFromDatabase: {
+          type: 'void',
+          'x-component': 'LoadCollectionsFromDataSourceAction',
+        },
         create: {
           type: 'void',
           title: '{{ t("Create collection") }}',

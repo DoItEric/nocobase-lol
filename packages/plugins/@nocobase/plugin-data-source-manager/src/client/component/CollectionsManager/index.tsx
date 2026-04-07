@@ -35,6 +35,7 @@ import { ConfigurationTable } from './ConfigurationTable';
 import { ConfigurationTabs } from './ConfigurationTabs';
 import PluginDatabaseConnectionsClient from '../../';
 import { EditCollection } from './EditCollectionAction';
+import { LoadCollectionsFromDataSourceAction } from './LoadCollectionsFromDataSourceAction';
 
 const schema2: ISchema = {
   type: 'object',
@@ -73,6 +74,7 @@ export const CollectionManagerPage = () => {
         SyncFieldsAction,
         SyncFieldsActionCom,
         SyncSQLFieldsAction,
+        LoadCollectionsFromDataSourceAction,
       }}
       scope={{
         allowCollectionDeletion: !!type?.allowCollectionDeletion,
