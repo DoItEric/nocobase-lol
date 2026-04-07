@@ -1,103 +1,43 @@
-English | [中文](./README.zh-CN.md) | [日本語](./README.ja-JP.md)| [Français](./README.fr.md)
+# nocobase-lol
 
-https://github.com/user-attachments/assets/4d11a87b-00e2-48f3-9bf7-389d21072d13
+## 中文说明
 
-<p align="center">
-<a href="https://trendshift.io/repositories/4112" target="_blank"><img src="https://trendshift.io/api/badge/repositories/4112" alt="nocobase%2Fnocobase | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-<a href="https://www.producthunt.com/posts/nocobase?embed=true&utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-nocobase" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=456520&theme=light&period=weekly&topic_id=267" alt="NocoBase - Scalability&#0045;first&#0044;&#0032;open&#0045;source&#0032;no&#0045;code&#0032;platform | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-</p>
+这是一个基于 NocoBase 的二次开发仓库，用于在保留上游能力的基础上，探索并实现自定义功能与插件扩展。
 
-## Table of Contents
+### 项目目的
 
-- [What is NocoBase](#what-is-nocobase)
-- [Release Notes](#release-notes)
-- [Distinctive features](#distinctive-features)
-- [Installation](#installation)
-- [How NocoBase works](#how-nocobase-works)
+- 作为 `nocobase/nocobase` 的 fork 仓库进行功能增强与实验。
+- 在不破坏原有框架能力的前提下，沉淀可复用的业务扩展。
+- 方便独立维护与验证新增功能。
 
-## What is NocoBase
+### 原始 README
 
-NocoBase is the most extensible AI-powered no-code platform.   
-Total control. Infinite extensibility. AI collaboration.  
-Enable your team to adapt quickly and cut costs dramatically.  
-No years of development. No millions wasted.  
-Deploy NocoBase in minutes — and take control of everything.
+原始 README 已保留为：[`raw_README.md`](./raw_README.md)
 
-Homepage:  
-https://www.nocobase.com/  
+你也可以在 GitHub 上查看：[`raw_README.md`](https://github.com/DoItEric/nocobase-lol/blob/main/raw_README.md)
 
-Online Demo:  
-https://demo.nocobase.com/new
+### 许可证说明
 
-Documents:  
-https://docs.nocobase.com/
+本仓库遵循上游项目许可证约束。根据当前仓库内 `LICENSE.txt` 的条款，允许 fork 和修改代码；使用、分发和商业化时请严格遵守其中的补充限制（例如品牌标识与平台化分发限制等）。
 
-Forum:  
-https://forum.nocobase.com/
+---
 
-Use Cases:  
-https://www.nocobase.com/en/blog/tags/customer-stories
+## English
 
-## Release Notes
+This repository is a fork of NocoBase for secondary development, focused on building custom features and plugin extensions while keeping compatibility with upstream capabilities.
 
-Our [blog](https://www.nocobase.com/en/blog/timeline) is regularly updated with release notes and provides a weekly summary.
+### Project Purpose
 
-## Distinctive features
+- Serve as a fork of `nocobase/nocobase` for feature enhancement and experiments.
+- Build reusable business extensions without breaking core framework behavior.
+- Maintain an independent workspace for iterative development and validation.
 
-### 1. Data model-driven, not form/table–driven
+### Original README
 
-Instead of being constrained by forms or tables, NocoBase adopts a data model–driven approach, separating data structure from user interface to unlock unlimited possibilities.
+The original README has been preserved as [`raw_README.md`](./raw_README.md).
 
-- UI and data structure are fully decoupled
-- Multiple blocks and actions can be created for the same table or record in any quantity or form
-- Supports the main database, external databases, and third-party APIs as data sources
+You can also view it on GitHub: [`raw_README.md`](https://github.com/DoItEric/nocobase-lol/blob/main/raw_README.md)
 
-![model](https://static-docs.nocobase.com/model.png)
+### License Note
 
-### 2. AI employees, integrated into your business systems
-Unlike standalone AI demos, NocoBase allows you to embed AI capabilities seamlessly into your interfaces, workflows, and data context, making AI truly useful in real business scenarios.
-
-- Define AI employees for roles such as translator, analyst, researcher, or assistant
-- Seamless AI–human collaboration in interfaces and workflows
-- Ensure AI usage is secure, transparent, and customizable for your business needs
-
-![AI-employee](https://static-docs.nocobase.com/ai-employee-home.png)
-
-### 3. What you see is what you get, incredibly easy to use
-
-While enabling the development of complex business systems, NocoBase keeps the experience simple and intuitive.
-
-- One-click switch between usage mode and configuration mode
-- Pages serve as a canvas to arrange blocks and actions, similar to Notion
-- Configuration mode is designed for ordinary users, not just programmers
-
-![wysiwyg](https://static-docs.nocobase.com/wysiwyg.gif)
-
-### 4. Everything is a plugin, designed for extension
-Adding more no-code features will never cover every business case. NocoBase is built for extension through its plugin-based microkernel architecture.
-
-- All functionalities are plugins, similar to WordPress
-- Plugins are ready to use upon installation
-- Pages, blocks, actions, APIs, and data sources can all be extended through custom plugins
-
-![plugins](https://static-docs.nocobase.com/plugins.png)
-
-## Installation
-
-NocoBase supports three installation methods:
-
-- <a target="_blank" href="https://docs.nocobase.com/welcome/getting-started/installation/docker-compose">Installing With Docker (👍Recommended)</a>
-
-  Suitable for no-code scenarios, no code to write. When upgrading, just download the latest image and reboot.
-
-- <a target="_blank" href="https://docs.nocobase.com/welcome/getting-started/installation/create-nocobase-app">Installing from create-nocobase-app CLI</a>
-
-  The business code of the project is completely independent and supports low-code development.
-
-- <a target="_blank" href="https://docs.nocobase.com/welcome/getting-started/installation/git-clone">Installing from Git source code</a>
-
-  If you want to experience the latest unreleased version, or want to participate in the contribution, you need to make changes and debug on the source code, it is recommended to choose this installation method, which requires a high level of development skills, and if the code has been updated, you can git pull the latest code.
-
-## How NocoBase works
-
-https://github.com/user-attachments/assets/8d183b44-9bb5-4792-b08f-bc08fe8dfaaf
+This repository follows the upstream license requirements. According to `LICENSE.txt`, forking and modifying the code are allowed; please ensure all supplementary restrictions are respected (for example, branding and platform distribution limitations).

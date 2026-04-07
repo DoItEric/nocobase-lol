@@ -1,0 +1,15 @@
+{
+  "PostgreSQL": "PostgreSQL",
+  "Data source display name": "数据源显示名称",
+  "Data source name": "数据源标识",
+  "Identifier, only letters, numbers and underscores": "标识符，只能使用字母、数字和下划线",
+  "Host": "主机",
+  "Port": "端口",
+  "Database": "数据库",
+  "Schema": "模式",
+  "Username": "用户名",
+  "Password": "密码",
+  "Table prefix": "表前缀",
+  "If set, only tables with this prefix will be loaded": "如果设置，只会加载带有此前缀的表",
+  "SSL connection": "SSL 连接"
+}

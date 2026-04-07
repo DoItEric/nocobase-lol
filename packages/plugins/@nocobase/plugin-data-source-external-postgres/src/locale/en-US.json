@@ -1,0 +1,15 @@
+{
+  "PostgreSQL": "PostgreSQL",
+  "Data source display name": "Data source display name",
+  "Data source name": "Data source name",
+  "Identifier, only letters, numbers and underscores": "Identifier, only letters, numbers and underscores",
+  "Host": "Host",
+  "Port": "Port",
+  "Database": "Database",
+  "Schema": "Schema",
+  "Username": "Username",
+  "Password": "Password",
+  "Table prefix": "Table prefix",
+  "If set, only tables with this prefix will be loaded": "If set, only tables with this prefix will be loaded",
+  "SSL connection": "SSL connection"
+}
