@@ -2,13 +2,13 @@
 
 ## 中文说明
 
-这是一个基于 NocoBase 的二次开发仓库，用于在保留上游能力的基础上，探索并实现自定义功能与插件扩展。
+这是一个基于 NocoBase 的个人向二次开发仓库，目标是让个人用户更轻量、更直接地使用 NocoBase，并按实际需求进行功能扩展。
 
 ### 项目目的
 
-- 作为 `nocobase/nocobase` 的 fork 仓库进行功能增强与实验。
-- 在不破坏原有框架能力的前提下，沉淀可复用的业务扩展。
-- 方便独立维护与验证新增功能。
+- 面向个人用户场景，降低使用和配置门槛。
+- 保持与上游 `nocobase/nocobase` 的兼容能力，便于持续同步更新。
+- 在此基础上扩展实用功能，当前已新增外部数据源（External Data Source）能力。
 
 ### 原始 README
 
@@ -24,13 +24,13 @@
 
 ## English
 
-This repository is a fork of NocoBase for secondary development, focused on building custom features and plugin extensions while keeping compatibility with upstream capabilities.
+This repository is a personal-use-focused fork of NocoBase. It aims to make NocoBase easier for individual users while keeping upstream compatibility and adding practical extensions.
 
 ### Project Purpose
 
-- Serve as a fork of `nocobase/nocobase` for feature enhancement and experiments.
-- Build reusable business extensions without breaking core framework behavior.
-- Maintain an independent workspace for iterative development and validation.
+- Improve usability for individual users with a lighter workflow.
+- Stay compatible with upstream `nocobase/nocobase` so updates can be synced continuously.
+- Extend practical capabilities; currently includes external data source support.
 
 ### Original README
 
