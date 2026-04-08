@@ -10,6 +10,7 @@
 import { Context } from '@nocobase/actions';
 import { DataSourceOptions, DatabaseDataSource, SequelizeCollectionManager } from '@nocobase/data-source-manager';
 import { Sequelize } from 'sequelize';
+import _ from 'lodash';
 
 export class ExternalPostgresDataSource extends DatabaseDataSource {
   declare collectionManager: SequelizeCollectionManager;
@@ -156,11 +157,89 @@ export class ExternalPostgresDataSource extends DatabaseDataSource {
 
     const mergedCollections = this.mergeWithLoadedCollections(collections, loadedCollections);
 
+    const existingCollectionNames = new Set(
+      existingDataSourceCollections.map((record) => record.get('name') as string),
+    );
+
     for (const collectionOptions of mergedCollections) {
       this.collectionManager.defineCollection(collectionOptions);
     }
 
+    // Persist newly loaded tables to the main DB so they survive process restarts.
+    // loadIntoApplication() only hydrates from dataSourcesCollections / dataSourcesFields.
+    // Skip when the data source row is not in the main DB yet (e.g. create middleware runs before insert).
+    const dataSourceRow = await ctx.db.getRepository('dataSources').findOne({
+      filter: { key: this.name },
+    });
+    if (dataSourceRow) {
+      const collectionsRepo = ctx.db.getRepository('dataSourcesCollections');
+      for (const collectionOptions of mergedCollections) {
+        const collectionName = collectionOptions.name;
+        if (!collectionName || existingCollectionNames.has(collectionName)) {
+          continue;
+        }
+        const fieldValues = (collectionOptions.fields || []).map((field) =>
+          this.serializeFieldForDataSourcesStorage(field, collectionName),
+        );
+        await collectionsRepo.create({
+          values: {
+            name: collectionName,
+            title: collectionOptions.title ?? collectionName,
+            dataSourceKey: this.name,
+            template: collectionOptions.template,
+            filterTargetKey: collectionOptions.filterTargetKey,
+            view: collectionOptions.view,
+            tableName: collectionOptions.tableName,
+            introspected: collectionOptions.introspected,
+            fields: fieldValues,
+          },
+          updateAssociationValues: ['fields'],
+        });
+        existingCollectionNames.add(collectionName);
+      }
+    }
+
     this.emitLoadingProgress({ total: tables.length, loaded: tables.length });
+  }
+
+  private serializeFieldForDataSourcesStorage(field: Record<string, any>, collectionName: string) {
+    const picked = _.pick(field, [
+      'name',
+      'type',
+      'interface',
+      'description',
+      'uiSchema',
+      'field',
+      'columnName',
+      'primaryKey',
+      'autoIncrement',
+      'allowNull',
+      'unique',
+      'defaultValue',
+      'target',
+      'foreignKey',
+      'sourceKey',
+      'targetKey',
+      'through',
+      'otherKey',
+      'onDelete',
+      'treeChildren',
+      'sortable',
+      'pattern',
+      'length',
+      'precision',
+      'scale',
+      'rawType',
+      'possibleTypes',
+      'introspected',
+    ]);
+    return {
+      ...picked,
+      collectionName,
+      dataSourceKey: this.name,
+      uiSchema: field.uiSchema ?? {},
+      options: _.isPlainObject(field.options) ? field.options : {},
+    };
   }
 
   async load(options: any = {}) {
